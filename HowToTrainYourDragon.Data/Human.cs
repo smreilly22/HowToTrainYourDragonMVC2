@@ -14,6 +14,9 @@ namespace HowToTrainYourDragon.Data
         public int HumanId { get; set; }
 
         [Required]
+        public Guid OwnerId { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
         [Required]
@@ -30,11 +33,11 @@ namespace HowToTrainYourDragon.Data
 
         public virtual Location CurrentLocation { get; set; }   
 
-        [ForeignKey("DragonCompanion")]
-        public bool DragonCompanionId? { get; set; }
+        //[ForeignKey("DragonCompanion")]
+        //public bool DragonCompanionId { get; set; }
 
-        public virtual Dragon DragonCompanion { get; set; }
+        //public virtual Dragon DragonCompanion { get; set; }
 
-        p
+        
     }
 }

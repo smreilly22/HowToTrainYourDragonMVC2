@@ -13,9 +13,17 @@ namespace HowToTrainYourDragon.Data
         public int LocationId { get; set; }
 
         [Required]
+
+        public Guid OwnerId { get; set; }
+
+        [Required]
         public string LocationName { get; set; }
 
         [Required]
         public string Climate { get; set; }
+
+        public virtual List<Human> Humans { get; set; } = new List<Human>();
+
+        public virtual List<Dragon> Dragons { get; set; } = new List<Dragon>(); 
     }
 }
