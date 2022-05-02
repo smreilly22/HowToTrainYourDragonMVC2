@@ -22,16 +22,16 @@ namespace HowToTrainYourDragon.Data
         [Required]
         public string Occupation { get; set; }
 
-        [ForeignKey("PreviousLocation")]
+       // [ForeignKey("PreviousLocation")]
 
-        public int PreviousLocationId { get; set; }
+       // public int PreviousLocationId { get; set; }
 
-        public virtual Location PreviousLocation { get; set; }
+       // public virtual Location PreviousLocation { get; set; }
 
-        [ForeignKey("CurrentLocation")]
-        public int CurrentLocationId { get; set; }
+       // [ForeignKey("CurrentLocation")]
+       // public int CurrentLocationId { get; set; }
 
-        public virtual Location CurrentLocation { get; set; }   
+       // public virtual Location CurrentLocation { get; set; }   
 
         //[ForeignKey("DragonCompanion")]
         //public bool DragonCompanionId { get; set; }

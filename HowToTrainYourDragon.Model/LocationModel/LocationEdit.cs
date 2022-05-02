@@ -20,5 +20,5 @@ namespace HowToTrainYourDragon.Model.LocationModel
         {
             get; set;
         }
- {    }
+    }
 }

@@ -8,7 +8,7 @@ namespace HowToTrainYourDragon.Model.LocationModel
 {
     public class LocationCreate
     {
-        public int LocationId { get; set; }
+        
 
         public string LocationName { get; set; }
 

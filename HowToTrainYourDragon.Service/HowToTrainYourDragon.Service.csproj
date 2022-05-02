@@ -64,6 +64,16 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HowToTrainYourDragon.Data\HowToTrainYourDragon.Data.csproj">
+      <Project>{CB3F844A-0F8B-401D-ABE7-E7D12E60213B}</Project>
+      <Name>HowToTrainYourDragon.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HowToTrainYourDragon.Model\HowToTrainYourDragon.Model.csproj">
+      <Project>{DA2A2661-EDEB-4ADF-A91B-A1B76C5A6F60}</Project>
+      <Name>HowToTrainYourDragon.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
