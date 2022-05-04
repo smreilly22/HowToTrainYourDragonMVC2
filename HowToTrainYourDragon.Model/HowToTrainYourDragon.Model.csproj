@@ -57,6 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DragonModel\DragonCreate.cs" />
+    <Compile Include="DragonModel\DragonDetails.cs" />
+    <Compile Include="DragonModel\DragonEdit.cs" />
+    <Compile Include="DragonModel\DragonListAll.cs" />
+    <Compile Include="HumanModel\HumanCreate.cs" />
+    <Compile Include="HumanModel\HumanDetails.cs" />
+    <Compile Include="HumanModel\HumanEdit.cs" />
+    <Compile Include="HumanModel\HumanListAll.cs" />
     <Compile Include="LocationModel\LocationCreate.cs" />
     <Compile Include="LocationModel\LocationDetails.cs" />
     <Compile Include="LocationModel\LocationEdit.cs" />
@@ -67,9 +75,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DragonModel\" />
-    <Folder Include="HumanModel\" />
+    <ProjectReference Include="..\HowToTrainYourDragon.Data\HowToTrainYourDragon.Data.csproj">
+      <Project>{CB3F844A-0F8B-401D-ABE7-E7D12E60213B}</Project>
+      <Name>HowToTrainYourDragon.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

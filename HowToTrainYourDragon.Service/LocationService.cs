@@ -1,6 +1,7 @@
 ﻿using HowToTrainYourDragon.Data;
+using HowToTrainYourDragon.Model.DragonModel;
 using HowToTrainYourDragon.Model.LocationModel;
-using HowToTrainYourDragon.MVC.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,17 +53,32 @@ namespace HowToTrainYourDragon.Service
             }
         }
 
+        public IEnumerable<DragonListAll> GetDragons()
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Dragons.Where(d => d.OwnerId == _userId).Select(d => new DragonListAll
+                {
+                    DragonType = d.DragonType
+                });
+
+                return query.ToArray();
+            }
+        }
+
         public LocationDetails GetLocationById(int id)
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var locationEntity = ctx.Locations.Single(l => l.LocationId == id && l.OwnerId == _userId);
+                
+                var locationEntity = ctx.Locations.Single(l => l.LocationId == id);
                 return
                     new LocationDetails
                     {
                         LocationId = locationEntity.LocationId,
                         LocationName = locationEntity.LocationName,
-                        Climate = locationEntity.Climate
+                        Climate = locationEntity.Climate,
+                        Dragons = locationEntity.Dragons.ToList()
                     };
             }
         }

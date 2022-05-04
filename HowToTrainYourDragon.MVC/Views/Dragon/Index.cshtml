@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HowToTrainYourDragon.Model.DragonModel.DragonListAll>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (TempData.ContainsKey("SaveResult"))
+ {
+
+    <div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="=alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+ }
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DragonId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DragonType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DragonId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DragonType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DragonId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DragonId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DragonId })
+            </td>
+        </tr>
+    }
+
+</table>

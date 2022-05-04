@@ -33,8 +33,34 @@
         <dd>
             @Html.DisplayFor(model => model.Climate)
         </dd>
-
     </dl>
+    <table class="Dragontable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dragons.First().LocationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dragons.First().DragonType)
+            </th>
+        </tr>
+
+        @foreach(var dragon in Model.Dragons)
+         {
+             <tr>
+                <td>
+                    @Html.DisplayFor(dragonItem => dragon.Location.LocationId)
+                </td>
+                
+                 <td>
+                     @Html.DisplayFor(dragonItem => dragon.DragonType)
+                 </td>
+
+             </tr>
+         }
+    </table>
+        
+
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new {  id = Model.LocationId }) |

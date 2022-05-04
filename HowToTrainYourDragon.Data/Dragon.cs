@@ -22,16 +22,19 @@ namespace HowToTrainYourDragon.Data
         [Required]
         public string Description { get; set; }
 
-        // [ForeignKey(nameof(PreviousLocation))]
-        // public int PreviousLocationId { get; set; }
 
-        // public virtual Location PreviousLocation { get; set; }
+       //[Required]
+       //[ForeignKey(nameof(PreviousLocation))]
+        //public int PreviousLocationId { get; set; }
 
-        // [ForeignKey(nameof(CurrentLocation))]
-        // public int CurrentLocationId { get; set; }
+        //public virtual Location PreviousLocation { get; set; }
 
-        // public virtual Location CurrentLocation { get; set; }
+        [Required]
+        [ForeignKey(nameof(Location))]
+         public int LocationId { get; set; }
 
-        public virtual Human HumanRiders { get; set; }
+         public virtual Location Location { get; set; }
+
+        //public virtual Human HumanRiders { get; set; }
     }
 }

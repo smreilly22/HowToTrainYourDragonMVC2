@@ -1,0 +1,57 @@
+﻿@model HowToTrainYourDragon.Model.DragonModel.DragonDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DragonDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DragonId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DragonId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DragonType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DragonType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.DragonId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

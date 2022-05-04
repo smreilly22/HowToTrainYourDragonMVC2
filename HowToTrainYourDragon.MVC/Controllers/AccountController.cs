@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HowToTrainYourDragon.MVC.Models;
+using HowToTrainYourDragon.Data;
 
 namespace HowToTrainYourDragon.MVC.Controllers
 {

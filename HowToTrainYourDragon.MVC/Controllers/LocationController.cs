@@ -1,4 +1,5 @@
-﻿using HowToTrainYourDragon.Model.LocationModel;
+﻿using HowToTrainYourDragon.Data;
+using HowToTrainYourDragon.Model.LocationModel;
 using HowToTrainYourDragon.Service;
 using Microsoft.AspNet.Identity;
 using System;
@@ -11,6 +12,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 {
     public class LocationController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Location
         public ActionResult Index()
         {
@@ -22,6 +24,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         public ActionResult Create()
         {
+            
             return View();
         }
 
@@ -51,6 +54,8 @@ namespace HowToTrainYourDragon.MVC.Controllers
         {
             var service = CreateLocationService();
             var model = service.GetLocationById(id);
+
+            
 
             return View(model);
         }
@@ -94,7 +99,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         }
 
-        [ActionName("Delete")]
+        /*[ActionName("Delete")]
 
         public ActionResult Delete(int id)
         {
@@ -115,8 +120,8 @@ namespace HowToTrainYourDragon.MVC.Controllers
             service.DeleteLocation(id);
 
             TempData["SaveResult"] = "Your location was deleted";
-            return RedirectToAction("Index");
-        }
+            return RedirectToAction("Index"); 
+        }*/
 
        private LocationService CreateLocationService()
         {
