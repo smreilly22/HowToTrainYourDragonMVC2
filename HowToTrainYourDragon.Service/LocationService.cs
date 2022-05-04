@@ -53,18 +53,7 @@ namespace HowToTrainYourDragon.Service
             }
         }
 
-        public IEnumerable<DragonListAll> GetDragons()
-        {
-            using(var ctx = new ApplicationDbContext())
-            {
-                var query = ctx.Dragons.Where(d => d.OwnerId == _userId).Select(d => new DragonListAll
-                {
-                    DragonType = d.DragonType
-                });
-
-                return query.ToArray();
-            }
-        }
+        
 
         public LocationDetails GetLocationById(int id)
         {
@@ -78,7 +67,8 @@ namespace HowToTrainYourDragon.Service
                         LocationId = locationEntity.LocationId,
                         LocationName = locationEntity.LocationName,
                         Climate = locationEntity.Climate,
-                        Dragons = locationEntity.Dragons.ToList()
+                        Dragons = locationEntity.Dragons.ToList(),
+                        Humans = locationEntity.Humans.ToList()
                     };
             }
         }

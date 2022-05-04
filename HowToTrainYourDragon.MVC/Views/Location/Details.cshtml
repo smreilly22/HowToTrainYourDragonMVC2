@@ -36,29 +36,45 @@
     </dl>
     <table class="Dragontable">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Dragons.First().LocationId)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Dragons.First().DragonType)
             </th>
         </tr>
 
-        @foreach(var dragon in Model.Dragons)
-         {
-             <tr>
-                <td>
-                    @Html.DisplayFor(dragonItem => dragon.Location.LocationId)
-                </td>
-                
-                 <td>
-                     @Html.DisplayFor(dragonItem => dragon.DragonType)
-                 </td>
+        @foreach (var dragon in Model.Dragons)
+        {
+            <tr>
 
-             </tr>
-         }
+
+                <td>
+                    @Html.DisplayFor(dragonItem => dragon.DragonType)
+                </td>
+
+            </tr>
+        }
     </table>
-        
+    <table class="Humantable">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Humans.First().Name)
+            </th>
+        </tr>
+
+        @foreach (var human in Model.Humans)
+        {
+            <tr>
+
+
+                <td>
+                    @Html.DisplayFor(humanItem => human.Name)
+                </td>
+
+            </tr>
+        }
+    </table>
+
 
 
 </div>

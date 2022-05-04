@@ -23,5 +23,7 @@ namespace HowToTrainYourDragon.Model.LocationModel
         public string Climate { get; set; }
 
         public List<Dragon> Dragons { get; set; } = new List<Dragon>();
+
+        public List<Human> Humans { get; set; } = new List<Human>();
      }
 }
