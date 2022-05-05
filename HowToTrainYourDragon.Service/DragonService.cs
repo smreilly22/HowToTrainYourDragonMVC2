@@ -25,7 +25,7 @@ namespace HowToTrainYourDragon.Service
                 DragonType = dragon.DragonType,
                 Description = dragon.Description,
                 //PreviousLocationId = dragon.PreviousLocationId,
-                LocationId = dragon.CurrentLocationId
+                LocationId = dragon.LocationId
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -63,7 +63,7 @@ namespace HowToTrainYourDragon.Service
                         DragonType = entity.DragonType,
                         Description = entity.Description,
                        // PreviousLocationId = entity.PreviousLocationId,
-                        LocationId = entity.LocationId,
+                        CurrentLocationId = entity.LocationId,
                         LocationName = entity.Location.LocationName
                     };
             }
@@ -87,10 +87,16 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var humanEntity = ctx.Humans.Where(h => h.HumanId == dragonId).ToArray();
+                var humanEntity = ctx.Humans.Where(h => h.DragonId == dragonId).ToArray();
                 foreach(Human human in humanEntity)
                 {
                     ctx.Humans.Remove(human);
+                    ctx.SaveChanges();
+                }
+                var partnershipEntity = ctx.Partnerships.Where(h => h.DragonId == dragonId).ToArray();
+                foreach (Partnership partnership in partnershipEntity)
+                {
+                    ctx.Partnerships.Remove(partnership);
                     ctx.SaveChanges();
                 }
                 var entity = ctx.Dragons.Single( d => d.DragonId == dragonId && d.OwnerId == _userId);

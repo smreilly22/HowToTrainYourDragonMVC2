@@ -40,6 +40,8 @@ namespace HowToTrainYourDragon.Data
 
         public DbSet<Dragon> Dragons { get; set; }
 
+        public DbSet<Partnership> Partnerships { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // modelBuilder.Entity<Dragon>()
@@ -62,6 +64,17 @@ namespace HowToTrainYourDragon.Data
             //    .HasRequired(d => d.DragonCompanion)
             //    .WithMany()
             //    .WillCascadeOnDelete(false); 
+
+            /*modelBuilder.Entity<Partnership>()
+                .HasRequired(p => p.Human)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Partnership>()
+                .HasRequired(p => p.Dragon)
+                .WithMany()
+                .WillCascadeOnDelete(false); */
+
+
             //modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

@@ -60,6 +60,7 @@
     <Compile Include="DragonService.cs" />
     <Compile Include="HumanService.cs" />
     <Compile Include="LocationService.cs" />
+    <Compile Include="PartnershipService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

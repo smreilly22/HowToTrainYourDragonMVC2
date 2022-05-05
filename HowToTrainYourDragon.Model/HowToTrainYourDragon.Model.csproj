@@ -69,6 +69,10 @@
     <Compile Include="LocationModel\LocationDetails.cs" />
     <Compile Include="LocationModel\LocationEdit.cs" />
     <Compile Include="LocationModel\LocationListAll.cs" />
+    <Compile Include="PartnershipModel\PartnershipCreate.cs" />
+    <Compile Include="PartnershipModel\PartnershipDetails.cs" />
+    <Compile Include="PartnershipModel\PartnershipEdit.cs" />
+    <Compile Include="PartnershipModel\PartnershipListAll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

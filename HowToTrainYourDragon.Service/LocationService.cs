@@ -91,6 +91,19 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
+                var humanEntity = ctx.Humans.Where(h => h.LocationId == locationId).ToArray();
+                foreach (Human human in humanEntity)
+                {
+                    ctx.Humans.Remove(human);
+                    ctx.SaveChanges();
+                }
+
+                var dragonEntity = ctx.Dragons.Where(h => h.LocationId == locationId).ToArray();
+                foreach (Dragon dragon in dragonEntity)
+                {
+                    ctx.Dragons.Remove(dragon);
+                    ctx.SaveChanges();
+                }
                 var entity = ctx.Locations.Single(l => l.LocationId == locationId && l.OwnerId == _userId);
 
                 ctx.Locations.Remove(entity);

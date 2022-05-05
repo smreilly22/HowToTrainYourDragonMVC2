@@ -16,9 +16,9 @@ namespace HowToTrainYourDragon.Model.DragonModel
 
         public string Description { get; set; }
 
-        public int PreviousLocationId { get; set; }
+       
 
-        public int LocationId { get; set; }
+        public int CurrentLocationId { get; set; }
         public string LocationName { get; set; }
         
     }

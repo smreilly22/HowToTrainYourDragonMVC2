@@ -70,10 +70,11 @@ namespace HowToTrainYourDragon.MVC.Controllers
             var detail = service.GetDragonById(id);
             var model = new DragonEdit
             {
+                DragonId = detail.DragonId,
                 DragonType = detail.DragonType,
                 Description = detail.Description,
-                PreviousLocationId = detail.PreviousLocationId,
-                CurrentLocatonId = detail.LocationId
+               
+                CurrentLocatonId = detail.CurrentLocationId
             };
 
             return View(model);

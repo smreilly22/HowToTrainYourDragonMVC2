@@ -90,8 +90,15 @@ namespace HowToTrainYourDragon.Service
 
         public bool DeleteHuman(int humanId)
         {
+
             using(var ctx = new ApplicationDbContext())
             {
+                var partnershipEntity = ctx.Partnerships.Where(h => h.HumanId == humanId).ToArray();
+                foreach (Partnership partnership in partnershipEntity)
+                {
+                    ctx.Partnerships.Remove(partnership);
+                    ctx.SaveChanges();
+                }
                 var entity = ctx.Humans.Single(h => h.HumanId == humanId && h.OwnerId == _userId);
 
                 ctx.Humans.Remove(entity);

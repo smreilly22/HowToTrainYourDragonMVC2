@@ -174,6 +174,7 @@
     <Compile Include="Controllers\HumanController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PartnershipController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,6 +254,10 @@
     <Content Include="Views\Human\Details.cshtml" />
     <Content Include="Views\Human\Edit.cshtml" />
     <Content Include="Views\Human\Delete.cshtml" />
+    <Content Include="Views\Partnership\Index.cshtml" />
+    <Content Include="Views\Partnership\Create.cshtml" />
+    <Content Include="Views\Partnership\Edit.cshtml" />
+    <Content Include="Views\Partnership\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

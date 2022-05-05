@@ -99,7 +99,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         }
 
-        /*[ActionName("Delete")]
+        [ActionName("Delete")]
 
         public ActionResult Delete(int id)
         {
@@ -121,7 +121,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
             TempData["SaveResult"] = "Your location was deleted";
             return RedirectToAction("Index"); 
-        }*/
+        }
 
        private LocationService CreateLocationService()
         {
