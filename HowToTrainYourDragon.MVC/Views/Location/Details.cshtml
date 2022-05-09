@@ -3,82 +3,85 @@
 @{
     ViewBag.Title = "Details";
 }
+<body style="background-image: url('../../Images/99322fb324515947b082d96ea2186559.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 
-<h2>Details</h2>
+    <h2 style="color:white;">Details</h2>
 
-<div>
-    <h4>LocationDetails</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LocationId)
-        </dt>
+    <div style="color:white;">
+        <h4>Location Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.LocationId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LocationId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.LocationId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LocationName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.LocationName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LocationName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.LocationName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Climate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Climate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Climate)
-        </dd>
-    </dl>
-    <table class="Dragontable">
-        <tr>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Dragons.First().DragonType)
-            </th>
-        </tr>
-
-        @foreach (var dragon in Model.Dragons)
-        {
+            <dd>
+                @Html.DisplayFor(model => model.Climate)
+            </dd>
+        </dl>
+        <table class="Dragontable" align="center" style="margin-bottom: 30px;">
             <tr>
 
-
-                <td>
-                    @Html.DisplayFor(dragonItem => dragon.DragonType)
-                </td>
-
+                <th>
+                    @Html.DisplayNameFor(model => model.Dragons.First().DragonType)
+                </th>
             </tr>
-        }
-    </table>
-    <table class="Humantable">
-        <tr>
 
-            <th>
-                @Html.DisplayNameFor(model => model.Humans.First().Name)
-            </th>
-        </tr>
+            @foreach (var dragon in Model.Dragons)
+            {
+                <tr>
 
-        @foreach (var human in Model.Humans)
-        {
+
+                    <td>
+                        @Html.DisplayFor(dragonItem => dragon.DragonType)
+                    </td>
+
+                </tr>
+            }
+        </table>
+        <table class="Humantable"  align="right" style="margin-top:-90px; margin-right: 200px;">
             <tr>
 
-
-                <td>
-                    @Html.DisplayFor(humanItem => human.Name)
-                </td>
-
+                <th>
+                    @Html.DisplayNameFor(model => model.Humans.First().Name)
+                </th>
             </tr>
-        }
-    </table>
+
+            @foreach (var human in Model.Humans)
+            {
+                <tr>
+
+
+                    <td>
+                        @Html.DisplayFor(humanItem => human.Name)
+                    </td>
+
+                </tr>
+            }
+        </table>
 
 
 
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.LocationId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new {  id = Model.LocationId }, new { @style = "color: white;" }) |
+        @Html.ActionLink("Back to List", "Index", null, new {@style ="color: white;"})
+    </p>
+
+</body>

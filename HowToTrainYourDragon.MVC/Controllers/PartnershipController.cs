@@ -1,4 +1,5 @@
-﻿using HowToTrainYourDragon.Model.PartnershipModel;
+﻿using HowToTrainYourDragon.Data;
+using HowToTrainYourDragon.Model.PartnershipModel;
 using HowToTrainYourDragon.Service;
 using Microsoft.AspNet.Identity;
 using System;
@@ -11,6 +12,8 @@ namespace HowToTrainYourDragon.MVC.Controllers
 {
     public class PartnershipController : Controller
     {
+
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Partnership
         public ActionResult Index()
         {
@@ -22,6 +25,8 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.HumanRiderId = new SelectList(_db.Humans, "HumanId", "Name");
+            ViewBag.DragonCompanionId = new SelectList(_db.Dragons, "DragonId", "DragonType");
             return View();
         }
 
@@ -39,6 +44,8 @@ namespace HowToTrainYourDragon.MVC.Controllers
             if (service.CreatePartnership(partnership))
             {
                 TempData["SaveResult"] = "Your Partnership was created";
+                ViewBag.HumanRiderId = new SelectList(_db.Humans, "HumanId", "Name");
+                ViewBag.DragonCompanionId = new SelectList(_db.Dragons, "DragonId", "DragonType");
                 return RedirectToAction("Index");
             }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HowToTrainYourDragon.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,11 @@ namespace HowToTrainYourDragon.Model
 
         public int? HumanRiderId { get; set; }
 
+        public virtual Human Human { get; set; }
+
         public int? DragonCompanionId { get; set; }
+
+        public virtual Dragon Dragon { get; set; }
 
         public string DragonNickName { get; set; }
     }

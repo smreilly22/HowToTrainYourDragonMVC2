@@ -63,8 +63,10 @@ namespace HowToTrainYourDragon.Service
                         HumanId = entity.HumanId,
                         Name = entity.Name,
                         Occupation = entity.Occupation,
-                        CurrentLocationId = entity.LocationId,
-                       DragonCompanionId = entity.DragonId.GetValueOrDefault(),
+                       // CurrentLocationId = entity.LocationId,
+                        CurrentLocation = entity.Location.LocationName,
+                      // DragonCompanionId = entity.DragonId.GetValueOrDefault(),
+                       DragonCompanion = entity.DragonCompanion.DragonType,
                         IsEvil = entity.IsEvil
                     };
             }

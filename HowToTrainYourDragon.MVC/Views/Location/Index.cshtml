@@ -3,50 +3,53 @@
 @{
     ViewBag.Title = "Index";
 }
+<body style="background-image: url('../../Images/99322fb324515947b082d96ea2186559.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;" >
 
-<h2>Index</h2>
+    <h2 style="color:white;">Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <p style="color:white;">
+        @Html.ActionLink("Create New", "Create", null, new { @style = "color:white;" })
+    </p>
 
-@if (TempData.ContainsKey("SaveResult"))
- {
+    @if (TempData.ContainsKey("SaveResult"))
+     {
 
-    <div class="alert alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="=alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
- }
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationName)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+        <div class="alert alert-success fade in" role="alert">
+            @ViewBag.SaveResult
+            <button type="button" class="close" data-dismiss="=alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+     }
+    <table class="table" style="color:white;">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LocationId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LocationName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.LocationId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.LocationId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.LocationId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationName)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.LocationId }, new { @style = "color:white;" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.LocationId }, new { @style = "color:white;" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.LocationId }, new { @style = "color:white;" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</body>

@@ -25,8 +25,10 @@ namespace HowToTrainYourDragon.Service
                 var entity = ctx.Partnerships.Where(p => p.OwnerId == _userid).Select(p => new PartnershipListAll
                 {
                     PartnershipId = p.PartnershipId,
+                    Human = p.Human,
                     HumanRiderId = p.HumanId,
                     DragonCompanionId = p.DragonId,
+                    Dragon = p.Dragon,
                     DragonNickName = p.DragonNickName
                 });
 

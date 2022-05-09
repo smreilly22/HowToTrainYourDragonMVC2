@@ -1,29 +1,32 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<body style="background-image: url('../../Images/BERK2.jpeg'); background-repeat: no-repeat; background-attachment:fixed; background-size: cover;">
+    
 
-<div class="jumbotron">
-    <h1>How To Train Your Dragon</h1>
-    <p class="lead">This is a How To Train Your Dragon Database where see all the characters, dragons, and locations from the franchise.</p>
-    @Html.ActionLink("Learn More", "About")
-</div>
+    <div class="jumbotron">
+        <h1>How To Train Your Dragon</h1>
+        <p class="lead">This is a How To Train Your Dragon Database where see all the characters, dragons, and locations from the franchise.</p>
+        @Html.ActionLink("Learn More", "About")
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Locations</h2>
-        <p>
-           Dive into the Locations that make the franchise so beautiful to look at.
-        </p>
-       @Html.ActionLink("See List of Locations", "Index", "Location", null, new {@class = "btn btn-primary btn-large"})
+    <div class="row" style="color:white;">
+        <div class="col-md-4">
+            <h2>Locations</h2>
+            <p>
+               Dive into the Locations that make the franchise so beautiful to look at.
+            </p>
+           @Html.ActionLink("See List of Locations", "Index", "Location", null, new {@class = "btn btn-primary btn-large"})
+        </div>
+        <div class="col-md-4">
+            <h2>Characters</h2>
+            <p>See the Human Charaacters that you fell in love with(or you learn to hate).</p>
+            @Html.ActionLink("See List of Chracters", "Index", "Human", null, new { @class = "btn btn-primary btn-large" })
+        </div>
+        <div class="col-md-4">
+            <h2>Dragons</h2>
+            <p>See The Dragons that made the franchise so iconic.</p>
+            @Html.ActionLink("See List of Dragons", "Index", "Dragon", null, new { @class = "btn btn-primary btn-large" })
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Characters</h2>
-        <p>See the Human Charaacters that you fell in love with(or you learn to hate).</p>
-        @Html.ActionLink("See List of Chracters", "Index", "Human", null, new { @class = "btn btn-primary btn-large" })
-    </div>
-    <div class="col-md-4">
-        <h2>Dragons</h2>
-        <p>See The Dragons that made the franchise so iconic.</p>
-        @Html.ActionLink("See List of Dragons", "Index", "Dragon", null, new { @class = "btn btn-primary btn-large" })
-    </div>
-</div>
+</body>

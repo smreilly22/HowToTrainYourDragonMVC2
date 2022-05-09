@@ -28,10 +28,10 @@
                 @Html.DisplayNameFor(model => model.PartnershipId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HumanRiderId)
+                @Html.DisplayNameFor(model => model.Human.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DragonCompanionId)
+                @Html.DisplayNameFor(model => model.Dragon.DragonType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DragonNickName)
@@ -46,18 +46,18 @@
                     @Html.DisplayFor(modelItem => item.PartnershipId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HumanRiderId)
+                    @Html.DisplayFor(modelItem => item.Human.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DragonCompanionId)
+                    @Html.DisplayFor(modelItem => item.Dragon.DragonType)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DragonNickName)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.PartnershipId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PartnershipId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PartnershipId })
                 </td>
             </tr>
         }

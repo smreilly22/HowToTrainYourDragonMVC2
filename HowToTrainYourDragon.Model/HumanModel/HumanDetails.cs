@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HowToTrainYourDragon.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +15,17 @@ namespace HowToTrainYourDragon.Model.HumanModel
 
         public string Occupation { get; set; } 
 
-        public int PreviousLocationId { get; set; }
+        
 
         public int CurrentLocationId { get; set; }
 
         public int DragonCompanionId { get; set; }
+
+        public virtual Dragon Dragon { get; set; }
+
+        public string DragonCompanion { get; set; }
+
+        public string CurrentLocation { get; set; }
 
         public bool IsEvil { get; set; }
     }
