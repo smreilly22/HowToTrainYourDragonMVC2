@@ -195,6 +195,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\99322fb324515947b082d96ea2186559.jpg" />
     <Content Include="Images\BERK2.jpeg" />
+    <Content Include="Images\Big_Black_Isle_New_Berk_%25281%2529.jpeg" />
+    <Content Include="Images\Character-Image.jpeg" />
+    <Content Include="Images\Dragon-Background.jpg" />
+    <Content Include="Images\Dragon2.jpeg" />
+    <Content Include="Images\How-to-Train-Your-Dragon-009.jpeg" />
+    <Content Include="Images\image-w1280.jpeg" />
+    <Content Include="Images\walmart-how-to-train-your-dragon-3-virtual-reality.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />

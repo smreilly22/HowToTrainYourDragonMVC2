@@ -3,54 +3,57 @@
 @{
     ViewBag.Title = "Delete";
 }
+<body style="background-image: url('../../Images/image-w1280.jpeg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white;">
 
-<h2>Delete</h2>
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>PartnershipDetails</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PartnershipId)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>PartnershipDetails</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PartnershipId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PartnershipId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PartnershipId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HumanRiderId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.HumanRiderId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HumanRiderId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.HumanRiderId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DragonCompanionId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DragonCompanionId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DragonCompanionId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DragonCompanionId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DragonNickName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DragonNickName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DragonNickName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DragonNickName)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index", null, new {@style="color:white"})
+            </div>
+        }
+    </div>
+
+</body>
