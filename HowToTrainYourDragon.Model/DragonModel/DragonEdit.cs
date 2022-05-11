@@ -17,5 +17,7 @@ namespace HowToTrainYourDragon.Model.DragonModel
        
 
         public int CurrentLocatonId { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

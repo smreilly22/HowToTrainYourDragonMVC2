@@ -46,10 +46,10 @@
        
         
             <dt>
-                @Html.DisplayNameFor(model => model.DragonCompanion)
+                @Html.DisplayNameFor(model => model.Dragon.DragonType)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.DragonCompanion)
+                @Html.DisplayFor(model => model.Dragon.DragonType)
             </dd>
 
        
@@ -62,6 +62,11 @@
                 @Html.DisplayFor(model => model.IsEvil)
             </dd>
 
+        </dl>
+        <dl>
+            <dt>
+                <img src="/Human/RetrieveImage/@Model.HumanId" alt="" height=100 width=200 style="margin-left: 400px;" />
+            </dt>
         </dl>
     </div>
     <p>

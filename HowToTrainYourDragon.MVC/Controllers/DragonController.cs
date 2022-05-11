@@ -41,8 +41,11 @@ namespace HowToTrainYourDragon.MVC.Controllers
                 return View(dragon);
             }
 
+            HttpPostedFileBase file = Request.Files["ImageData"];
+            
             var service = CreateDragonService();
-            if (service.CreateDragon(dragon))
+          
+            if (service.CreateDragon(file, dragon))
             {
                 TempData["SaveREsult"] = "Your dragon was created";
                 return RedirectToAction("Index");
@@ -73,6 +76,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
                 DragonId = detail.DragonId,
                 DragonType = detail.DragonType,
                 Description = detail.Description,
+                Image = detail.Image,
                
                 CurrentLocatonId = detail.CurrentLocationId
             };
@@ -95,8 +99,10 @@ namespace HowToTrainYourDragon.MVC.Controllers
                 return View(dragon);
             }
 
+
+            HttpPostedFileBase file = Request.Files["ImageData"];
             var service = CreateDragonService();
-            if (service.UpdateDragon(dragon))
+            if (service.UpdateDragon(file, dragon))
             {
                 TempData["SaveResult"] = "Your Dragon was updated";
                 return RedirectToAction("Index");
@@ -128,6 +134,22 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
             TempData["SaveResult"] = "Your dragon was delete";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult RetrieveImage(int id)
+        {
+            var service = CreateDragonService();
+
+
+            byte[] cover = service.GetImageFromDatabase(id);
+            if(cover != null)
+            {
+                return File(cover, "image/jpg");
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private DragonService CreateDragonService()

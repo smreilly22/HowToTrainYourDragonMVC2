@@ -14,13 +14,15 @@ namespace HowToTrainYourDragon.Model.HumanModel
 
         public string Occupation { get; set; }
 
-        public int PreviousLocationId { get; set; }
+      
 
         public int CurrentLocationId { get; set; }
 
-        public int DragonCompanionId { get; set; }
+        public int? DragonCompanionId { get; set; }
 
         public bool IsEvil { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }
 

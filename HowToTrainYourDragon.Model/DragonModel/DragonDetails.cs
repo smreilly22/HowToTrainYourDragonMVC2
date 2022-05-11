@@ -20,6 +20,8 @@ namespace HowToTrainYourDragon.Model.DragonModel
 
         public int CurrentLocationId { get; set; }
         public string LocationName { get; set; }
+
+        public byte[] Image { get; set; }
         
     }
 }

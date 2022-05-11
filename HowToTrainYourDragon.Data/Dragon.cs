@@ -36,5 +36,7 @@ namespace HowToTrainYourDragon.Data
          public virtual Location Location { get; set; }
 
         //public virtual Human HumanRiders { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

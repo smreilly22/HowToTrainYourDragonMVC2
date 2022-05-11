@@ -19,7 +19,7 @@ namespace HowToTrainYourDragon.Model.HumanModel
 
         public int CurrentLocationId { get; set; }
 
-        public int DragonCompanionId { get; set; }
+        public int? DragonCompanionId { get; set; }
 
         public virtual Dragon Dragon { get; set; }
 
@@ -28,5 +28,7 @@ namespace HowToTrainYourDragon.Model.HumanModel
         public string CurrentLocation { get; set; }
 
         public bool IsEvil { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

@@ -40,6 +40,8 @@ namespace HowToTrainYourDragon.Data
 
         public virtual Dragon DragonCompanion { get; set; }
 
+        public byte[] Image { get; set; }
+
 
         
     }

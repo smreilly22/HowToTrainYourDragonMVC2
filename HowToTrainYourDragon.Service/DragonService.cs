@@ -2,9 +2,11 @@
 using HowToTrainYourDragon.Model.DragonModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace HowToTrainYourDragon.Service
 {
@@ -17,15 +19,17 @@ namespace HowToTrainYourDragon.Service
             _userId = userId;
         }
 
-        public bool CreateDragon(DragonCreate dragon)
+        public bool CreateDragon(HttpPostedFileBase file, DragonCreate dragon)
         {
+            dragon.Image = ConvertToBytes(file);
             var entity = new Dragon()
             {
                 OwnerId = _userId,
                 DragonType = dragon.DragonType,
                 Description = dragon.Description,
                 //PreviousLocationId = dragon.PreviousLocationId,
-                LocationId = dragon.LocationId
+                LocationId = dragon.LocationId,
+                Image = dragon.Image
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -35,6 +39,15 @@ namespace HowToTrainYourDragon.Service
             }
 
         }
+
+        public byte[] ConvertToBytes(HttpPostedFileBase image)
+        {
+            byte[] imageBytes = null;
+            BinaryReader reader = new BinaryReader(image.InputStream);
+            imageBytes = reader.ReadBytes((int) image.ContentLength);
+            return imageBytes;
+        }
+
 
         public IEnumerable<DragonListAll> GetDragons()
         {
@@ -64,20 +77,23 @@ namespace HowToTrainYourDragon.Service
                         Description = entity.Description,
                        // PreviousLocationId = entity.PreviousLocationId,
                         CurrentLocationId = entity.LocationId,
-                        LocationName = entity.Location.LocationName
+                        LocationName = entity.Location.LocationName,
+                        Image = entity.Image
                     };
             }
         }
 
-        public bool UpdateDragon(DragonEdit dragon)
+        public bool UpdateDragon(HttpPostedFileBase file, DragonEdit dragon)
         {
-            using(var ctx = new ApplicationDbContext())
+            dragon.Image = ConvertToBytes(file);
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Dragons.Single(d => d.DragonId == dragon.DragonId && d.OwnerId == _userId);
                 entity.DragonType = dragon.DragonType;
                 entity.Description = dragon.Description;
                // entity.PreviousLocationId = dragon.PreviousLocationId;
                 entity.LocationId = dragon.CurrentLocatonId;
+                entity.Image = dragon.Image;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -103,6 +119,16 @@ namespace HowToTrainYourDragon.Service
                 ctx.Dragons.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public byte[] GetImageFromDatabase(int id)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var q = from temp in ctx.Dragons where temp.DragonId == id select temp.Image;
+                byte[] cover = q.First();
+                return cover;
             }
         }
     }

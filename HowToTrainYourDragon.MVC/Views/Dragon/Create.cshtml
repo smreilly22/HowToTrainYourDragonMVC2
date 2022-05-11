@@ -8,9 +8,10 @@
     <h2 style="color:white;">Create</h2>
 
 
-    @using (Html.BeginForm()) 
+    @using (Html.BeginForm("Create", "Dragon", FormMethod.Post, new {enctype ="multipart/form-data"})) 
     {
         @Html.AntiForgeryToken()
+        <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
     
         <div class="form-horizontal" style="color:white;">
             <h4>DragonCreate</h4>
@@ -47,6 +48,12 @@
                     <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
+            <div>
+                <td>
+                    <img src="~/Controllers/DragonController/RetrieveImage" alt="" height=100 width=200 />
+                </td>
+            </div>
+            
         </div>
     }
 

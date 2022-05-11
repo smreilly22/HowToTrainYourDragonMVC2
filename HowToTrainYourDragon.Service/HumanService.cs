@@ -2,9 +2,11 @@
 using HowToTrainYourDragon.Model.HumanModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace HowToTrainYourDragon.Service
 {
@@ -17,8 +19,10 @@ namespace HowToTrainYourDragon.Service
             _userId = userId;
         }
 
-        public bool CreateHuman(HumanCreate model)
+        public bool CreateHuman(HttpPostedFileBase file, HumanCreate model)
         {
+            model.Image = ConvertToBytes(file);
+
             var entity = new Human()
             {
                 OwnerId = _userId,
@@ -26,14 +30,24 @@ namespace HowToTrainYourDragon.Service
                 Occupation = model.Occupation,
                 LocationId = model.CurrentLocationId,
                 DragonId = model.DragonCompanionId,
-                IsEvil = model.IsEvil
+                IsEvil = model.IsEvil,
+                Image = model.Image
             };
+
 
             using( var ctx = new ApplicationDbContext())
             {
                 ctx.Humans.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+        }
+
+        public byte[] ConvertToBytes(HttpPostedFileBase image)
+        {
+            byte[] imageBytes = null;
+            BinaryReader reader = new BinaryReader(image.InputStream);
+            imageBytes = reader.ReadBytes((int)image.ContentLength);
+            return imageBytes;
         }
 
 
@@ -65,16 +79,19 @@ namespace HowToTrainYourDragon.Service
                         Occupation = entity.Occupation,
                        // CurrentLocationId = entity.LocationId,
                         CurrentLocation = entity.Location.LocationName,
-                      // DragonCompanionId = entity.DragonId.GetValueOrDefault(),
-                       DragonCompanion = entity.DragonCompanion.DragonType,
-                        IsEvil = entity.IsEvil
+                       DragonCompanionId = entity.DragonId.GetValueOrDefault(),
+                      // DragonCompanion = entity.DragonCompanion.DragonType,
+                        IsEvil = entity.IsEvil,
+                        Image = entity.Image
                     };
             }
         }
-
-        public bool UpdateHuman(HumanEdit model)
+         
+        public bool UpdateHuman(HttpPostedFileBase file, HumanEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            model.Image = ConvertToBytes(file);
+
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Humans.Single(h => h.HumanId == model.HumanId && h.OwnerId == _userId);
 
@@ -83,6 +100,7 @@ namespace HowToTrainYourDragon.Service
                 entity.LocationId = model.CurrentLocationId;
                 entity.DragonId = model.DragonCompanionId;
                 entity.IsEvil = model.IsEvil;
+                entity.Image = model.Image;
 
                 return ctx.SaveChanges() == 1;
 
@@ -106,6 +124,16 @@ namespace HowToTrainYourDragon.Service
                 ctx.Humans.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public byte[] GetImageFromDatabase(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var q = from temp in ctx.Humans where temp.HumanId == id select temp.Image;
+                byte[] cover = q.First();
+                return cover;
             }
         }
     }

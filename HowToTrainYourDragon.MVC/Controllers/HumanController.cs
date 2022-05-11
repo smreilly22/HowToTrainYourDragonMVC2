@@ -33,9 +33,10 @@ namespace HowToTrainYourDragon.MVC.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
+            HttpPostedFileBase file = Request.Files["ImageData"];
             var service = CreateHumanService();
 
-            if (service.CreateHuman(model))
+            if (service.CreateHuman(file, model))
             {
                 TempData["SaveReslt"] = "You have posted character";
                 return RedirectToAction("Index");
@@ -60,12 +61,14 @@ namespace HowToTrainYourDragon.MVC.Controllers
             var detail = service.GetHumanById(id);
             var model = new HumanEdit
             {
+                HumanId = detail.HumanId,
                 Name = detail.Name,
                 Occupation = detail.Occupation,
                 //PreviousLocationId = detail.PreviousLocationId,
                 CurrentLocationId = detail.CurrentLocationId,
                 DragonCompanionId = detail.DragonCompanionId,
-                IsEvil = detail.IsEvil
+                IsEvil = detail.IsEvil,
+                Image = detail.Image
             };
 
             return View(model);
@@ -83,8 +86,9 @@ namespace HowToTrainYourDragon.MVC.Controllers
                 return View(model);
             }
 
+            HttpPostedFileBase file = Request.Files["ImageData"];
             var service = CreateHumanService();
-            if (service.UpdateHuman(model))
+            if (service.UpdateHuman(file, model))
             {
                 TempData["SaveResult"] = "Your note was updated";
                 return RedirectToAction("Index");
@@ -113,6 +117,22 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
             TempData["SaveResult"] = "Your note was deleted";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult RetrieveImage(int id)
+        {
+            var service = CreateHumanService();
+
+
+            byte[] cover = service.GetImageFromDatabase(id);
+            if (cover != null)
+            {
+                return File(cover, "image/jpg");
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private HumanService CreateHumanService()
