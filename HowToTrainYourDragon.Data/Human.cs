@@ -22,13 +22,7 @@ namespace HowToTrainYourDragon.Data
         [Required]
         public string Occupation { get; set; }
         public bool IsEvil { get; set; }
-        //[Required]
-        //[ForeignKey("PreviousLocation")]
-
-        //public int PreviousLocationId { get; set; }
-
-        //public virtual Location PreviousLocation { get; set; }
-
+        
         [Required]
         [ForeignKey("Location")]
         public int LocationId { get; set; }
@@ -41,6 +35,18 @@ namespace HowToTrainYourDragon.Data
         public virtual Dragon DragonCompanion { get; set; }
 
         public byte[] Image { get; set; }
+
+        
+        public string Gender { get; set; }
+
+        [Required]
+        public string HairColor { get; set; }
+
+        [Required]
+        public string Eyecolor { get; set; }
+
+        [Required]
+        public bool HasDragon { get; set; }
 
 
         

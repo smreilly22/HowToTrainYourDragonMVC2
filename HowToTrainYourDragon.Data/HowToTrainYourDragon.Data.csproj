@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202205101932357_2.designer.cs">
       <DependentUpon>202205101932357_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205121324575_NewHumanProps.cs" />
+    <Compile Include="Migrations\202205121324575_NewHumanProps.designer.cs">
+      <DependentUpon>202205121324575_NewHumanProps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Partnership.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +95,15 @@
     <EmbeddedResource Include="Migrations\202205101932357_2.resx">
       <DependentUpon>202205101932357_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205121324575_NewHumanProps.resx">
+      <DependentUpon>202205121324575_NewHumanProps.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="IndvImages\Hiccup.jpeg" />
+    <Content Include="IndvImages\Hiccup2.jpg" />
+    <Content Include="IndvImages\Toothless.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

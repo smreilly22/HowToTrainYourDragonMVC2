@@ -68,7 +68,11 @@ namespace HowToTrainYourDragon.MVC.Controllers
                 CurrentLocationId = detail.CurrentLocationId,
                 DragonCompanionId = detail.DragonCompanionId,
                 IsEvil = detail.IsEvil,
-                Image = detail.Image
+                Image = detail.Image,
+                Gender = detail.Gender,
+                HairColor = detail.HairColor,
+                EyeColor = detail.EyeColor,
+                HasDragon = detail.HasDragon
             };
 
             return View(model);

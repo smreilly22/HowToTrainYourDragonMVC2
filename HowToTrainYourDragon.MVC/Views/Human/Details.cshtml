@@ -26,6 +26,24 @@
             <dd>
                 @Html.DisplayFor(model => model.Name)
             </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.HairColor)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HairColor)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EyeColor)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EyeColor)
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Occupation)
@@ -40,11 +58,12 @@
             <dd>
                 @Html.DisplayFor(model => model.CurrentLocation)
             </dd>
-        
-        
-
-       
-        
+            <dt>
+                @Html.DisplayNameFor(model => model.HasDragon)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HasDragon)
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.Dragon.DragonType)
             </dt>
@@ -65,7 +84,7 @@
         </dl>
         <dl>
             <dt>
-                <img src="/Human/RetrieveImage/@Model.HumanId" alt="" height=100 width=200 style="margin-left: 400px;" />
+                <img src="/Human/RetrieveImage/@Model.HumanId" alt="" height=200 width=300 style="margin-left: 400px; border-radius: 45%;" />
             </dt>
         </dl>
     </div>

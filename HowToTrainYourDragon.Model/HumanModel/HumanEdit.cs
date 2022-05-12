@@ -14,7 +14,6 @@ namespace HowToTrainYourDragon.Model.HumanModel
 
         public string Occupation { get; set; }
 
-      
 
         public int CurrentLocationId { get; set; }
 
@@ -23,6 +22,20 @@ namespace HowToTrainYourDragon.Model.HumanModel
         public bool IsEvil { get; set; }
 
         public byte[] Image { get; set; }
+
+        public bool HasDragon { get; set; }
+
+        public string Gender { get; set; }
+
+        public string HairColor { get; set; }
+
+        public string EyeColor { get; set; }
+
+
+
+
+
+
     }
 }
 

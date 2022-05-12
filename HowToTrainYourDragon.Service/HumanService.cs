@@ -31,7 +31,11 @@ namespace HowToTrainYourDragon.Service
                 LocationId = model.CurrentLocationId,
                 DragonId = model.DragonCompanionId,
                 IsEvil = model.IsEvil,
-                Image = model.Image
+                Image = model.Image,
+                Gender = model.Gender,
+                HairColor = model.HairColor,
+                HasDragon = model.HasDragon,
+                Eyecolor = model.EyeColor
             };
 
 
@@ -82,7 +86,11 @@ namespace HowToTrainYourDragon.Service
                        DragonCompanionId = entity.DragonId.GetValueOrDefault(),
                       // DragonCompanion = entity.DragonCompanion.DragonType,
                         IsEvil = entity.IsEvil,
-                        Image = entity.Image
+                        Image = entity.Image,
+                        HairColor = entity.HairColor,
+                        EyeColor = entity.Eyecolor,
+                        HasDragon = entity.HasDragon,
+                        Gender = entity.Gender
                     };
             }
         }
@@ -101,6 +109,10 @@ namespace HowToTrainYourDragon.Service
                 entity.DragonId = model.DragonCompanionId;
                 entity.IsEvil = model.IsEvil;
                 entity.Image = model.Image;
+                entity.Gender = entity.Gender;
+                entity.HairColor = model.HairColor;
+                entity.Eyecolor = model.EyeColor;
+                entity.HasDragon = model.HasDragon;
 
                 return ctx.SaveChanges() == 1;
 
