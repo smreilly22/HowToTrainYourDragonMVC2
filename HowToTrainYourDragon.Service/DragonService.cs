@@ -142,16 +142,16 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var humanEntity = ctx.Humans.Where(h => h.DragonId == dragonId).ToArray();
-                foreach(Human human in humanEntity)
-                {
-                    ctx.Humans.Remove(human);
-                    ctx.SaveChanges();
-                }
                 var partnershipEntity = ctx.Partnerships.Where(h => h.DragonId == dragonId).ToArray();
                 foreach (Partnership partnership in partnershipEntity)
                 {
                     ctx.Partnerships.Remove(partnership);
+                    ctx.SaveChanges();
+                }
+                var humanEntity = ctx.Humans.Where(h => h.DragonId == dragonId).ToArray();
+                foreach(Human human in humanEntity)
+                {
+                    ctx.Humans.Remove(human);
                     ctx.SaveChanges();
                 }
                 var entity = ctx.Dragons.Single( d => d.DragonId == dragonId && d.OwnerId == _userId);
