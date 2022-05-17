@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
-<body style="background-image: url('../../Images/dragon3.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white;">
+<body style="background-image: url('../../Images/dragon3.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white; font-family: Papyrus, fantasy; ">
 
     <h2 style="color:white;">Edit</h2>
 
@@ -20,7 +20,7 @@
                 <div class="form-group" style="color:white;">
                     @Html.LabelFor(model => model.DragonClass, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.DragonClass, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EnumDropDownListFor(model => model.DragonClass, "DragonClass", new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.DragonClass, "", new { @class = "text-danger" })
                     </div>
                 </div>

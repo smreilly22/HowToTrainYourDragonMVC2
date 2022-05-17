@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
 }
-<body style="background-image:  url('../../Images/dragon3.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white; position:center;">
+<body style="background-image: url('../../Images/dragon3.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white; position: center; font-family: Papyrus, fantasy; ">
     
 
     <h2 style="color: white;">Index</h2>
@@ -30,10 +30,10 @@
                 @Html.DisplayNameFor(model => model.DragonId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DragonType)
+                @Html.DisplayNameFor(model => model.DragonClass)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Color)
+                @Html.DisplayNameFor(model => model.DragonType)
             </th>
             <th></th>
         </tr>
@@ -45,10 +45,10 @@
                     @Html.DisplayFor(modelItem => item.DragonId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DragonType)
+                    @Html.DisplayFor(modelItem => item.DragonClass)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Color)
+                    @Html.DisplayFor(modelItem => item.DragonType)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.DragonId }, new {@style= "color:white"}) |

@@ -13,7 +13,7 @@ namespace HowToTrainYourDragon.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202205131447426_Initial"; }
+            get { return "202205171854549_Initial"; }
         }
         
         string IMigrationMetadata.Source

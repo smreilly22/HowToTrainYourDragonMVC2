@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="font-family: Papyrus, fantasy;  ">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,6 +27,7 @@
                     <li>@Html.ActionLink("Locations", "Index", "Location")</li>
                     <li>@Html.ActionLink("Characters", "Index", "Human")</li>
                     <li>@Html.ActionLink("Dragons", "Index", "Dragon")</li>
+                    <li>@Html.ActionLink("Partnerships", "Index", "Partnership")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -35,7 +36,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer style="color: white; font-family: Papyrus, fantasy;">
             <p>&copy; @DateTime.Now.Year - How To Train Your Dragon API</p>
         </footer>
     </div>

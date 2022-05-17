@@ -84,9 +84,7 @@ namespace HowToTrainYourDragon.Service
                         HumanId = entity.HumanId,
                         Name = entity.Name,
                         Occupation = entity.Occupation,
-                        // CurrentLocationId = entity.LocationId,
                         CurrentLocation = entity.Location.LocationName,
-
                         IsEvil = entity.IsEvil,
                         Image = entity.Image,
                         HairColor = entity.HairColor,
@@ -109,9 +107,7 @@ namespace HowToTrainYourDragon.Service
                         HumanId = entity.HumanId,
                         Name = entity.Name,
                         Occupation = entity.Occupation,
-                        // CurrentLocationId = entity.LocationId,
                         CurrentLocation = entity.Location.LocationName,
-
                         IsEvil = entity.IsEvil,
                         Image = entity.Image,
                         HairColor = entity.HairColor,

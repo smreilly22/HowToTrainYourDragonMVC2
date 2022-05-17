@@ -3,9 +3,9 @@
 @{
     ViewBag.Title = "Delete";
 }
-<body style="background-image: url('../../Images/99322fb324515947b082d96ea2186559.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body style="background-image: url('../../Images/99322fb324515947b082d96ea2186559.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; font-family: Papyrus, fantasy; ">
 
-<h2>Delete</h2>
+    <h2>Delete</h2>
 
     <h3 style="color:white;">Are you sure you want to delete this?</h3>
     <div style="color:white;">
@@ -38,12 +38,13 @@
 
         </dl>
 
-        @using (Html.BeginForm()) {
+        @using (Html.BeginForm())
+        {
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
                 <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index", null, new {@style="color:white;"})
+                @Html.ActionLink("Back to List", "Index", null, new { @style = "color:white;" })
             </div>
         }
     </div>

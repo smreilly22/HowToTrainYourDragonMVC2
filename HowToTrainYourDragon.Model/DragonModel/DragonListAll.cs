@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HowToTrainYourDragon.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace HowToTrainYourDragon.Model.DragonModel
         public string DragonType { get; set; }
 
         public string Color { get; set; }
+
+        public ClassType DragonClass { get; set; }
     }
 }

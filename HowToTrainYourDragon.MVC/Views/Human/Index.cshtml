@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<body style="background-image: url('../../Images/Character-Image.jpeg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white; ">
+<body style="background-image: url('../../Images/Character-Image.jpeg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white; font-family: Papyrus, fantasy; font-family: Papyrus, fantasy; ">
 
     <h2>Index</h2>
 
@@ -25,33 +25,34 @@
             <th></th>
         </tr>
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HumanId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.HasDragon)
-                @if (item.HasDragon == true)
-                {
-                    @Html.Encode("Has Dragon")
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HumanId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.HasDragon)
+                    @if (item.HasDragon == true)
+                    {
+                        @Html.Encode("Has Dragon")
 
-                }
-                @if (item.HasDragon == false)
-                {
-                    @Html.Encode("Does Not have Dragon")
-                }
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.HumanId }, new {@style="color:white"}) |
-                @Html.ActionLink("Details", "Details", new {  id=item.HumanId }, new { @style = "color:white" }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.HumanId }, new { @style = "color:white" })
-            </td>
-        </tr>
-    }
+                    }
+                    @if (item.HasDragon == false)
+                    {
+                        @Html.Encode("Does Not have Dragon")
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.HumanId }, new { @style = "color:white" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.HumanId }, new { @style = "color:white" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.HumanId }, new { @style = "color:white" })
+                </td>
+            </tr>
+        }
 
     </table>
 

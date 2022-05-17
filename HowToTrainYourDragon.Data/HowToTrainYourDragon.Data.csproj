@@ -61,9 +61,9 @@
     <Compile Include="Human.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Migrations\202205131447426_Initial.cs" />
-    <Compile Include="Migrations\202205131447426_Initial.designer.cs">
-      <DependentUpon>202205131447426_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202205171854549_Initial.cs" />
+    <Compile Include="Migrations\202205171854549_Initial.designer.cs">
+      <DependentUpon>202205171854549_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Partnership.cs" />
@@ -117,8 +117,8 @@
     <Content Include="IndvImages\zippleback2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205131447426_Initial.resx">
-      <DependentUpon>202205131447426_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205171854549_Initial.resx">
+      <DependentUpon>202205171854549_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

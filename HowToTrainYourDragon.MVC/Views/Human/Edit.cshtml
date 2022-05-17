@@ -3,15 +3,15 @@
 @{
     ViewBag.Title = "Edit";
 }
-<body style="background-image: url('../../Images/Character-Image.jpeg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white; ">
+<body style="background-image: url('../../Images/Character-Image.jpeg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: black; color: white; font-family: Papyrus, fantasy; ">
 
     <h2>Edit</h2>
 
 
-    @using (Html.BeginForm("Edit", "Human", FormMethod.Post, new { enctype = "multipart/form-data"}))
+    @using (Html.BeginForm("Edit", "Human", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
-    
+
         <div class="form-horizontal">
             <h4>HumanEdit</h4>
             <hr />
@@ -103,11 +103,11 @@
                 </div>
             </div>
         </div>
-     }
+    }
 
-            <div>
-                @Html.ActionLink("Back to List", "Index", null, new {@style = "color: white"})
-            </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index", null, new { @style = "color: white" })
+    </div>
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")

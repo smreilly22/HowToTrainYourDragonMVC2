@@ -38,7 +38,7 @@ namespace HowToTrainYourDragon.Data
 
         public byte[] Image { get; set; }
 
-        
+       
         public string Gender { get; set; }
 
         [Required]

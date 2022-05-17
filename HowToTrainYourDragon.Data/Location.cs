@@ -22,8 +22,6 @@ namespace HowToTrainYourDragon.Data
         [Required]
         public string AlternateLocation { get; set; }
 
-        
-
         public virtual List<Human> Humans { get; set; } = new List<Human>();
 
         public virtual List<Dragon> Dragons { get; set; } = new List<Dragon>(); 

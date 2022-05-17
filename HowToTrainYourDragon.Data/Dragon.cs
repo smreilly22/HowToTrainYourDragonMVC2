@@ -26,12 +26,13 @@ namespace HowToTrainYourDragon.Data
 
         [Required]
         [ForeignKey(nameof(Location))]
-         public int LocationId { get; set; }
+        public int LocationId { get; set; }
 
-         public virtual Location Location { get; set; }
+        public virtual Location Location { get; set; }
 
         public byte[] Image { get; set; }
 
+        [Required]
         public ClassType DragonClass { get; set; }
 
         [Required]
@@ -50,6 +51,7 @@ namespace HowToTrainYourDragon.Data
         public string FireType { get; set; }
 
         //Stats
+        
         public int Attack { get; set; }
 
         public int Speed { get; set; }

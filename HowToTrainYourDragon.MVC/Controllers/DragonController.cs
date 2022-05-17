@@ -24,9 +24,6 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         public ActionResult Create()
         {
-            //ViewBag.PreviousLocationId = new SelectList(_db.Locations, "PreviousLocationId", "LocationName");
-            //ViewBag.CurrentLocationId = new SelectList(_db.Locations, "CurrentLocationId", "LocationName");
-
            
             return View();
         }
@@ -53,9 +50,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
             ModelState.AddModelError("", "Dragon could not be created");
 
-            //ViewBag.PreviousLocationId = new SelectList(_db.Locations, "PreviousLocationId", "LocationName");
-            //ViewBag.CurrentLocationId = new SelectList(_db.Locations, "CurrentLocationId", "LocationName");
-            return View(dragon);
+           return View(dragon);
 
         }
 

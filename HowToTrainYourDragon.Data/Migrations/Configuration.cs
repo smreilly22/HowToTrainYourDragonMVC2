@@ -15,7 +15,12 @@
 
         protected override void Seed(HowToTrainYourDragon.Data.ApplicationDbContext context)
         {
-            Guid newGuid = Guid.Parse("3cff89f9-4935-4839-8662-82a9b15e09e9");
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
+
+            Guid newGuid = Guid.Parse("14d9f0ae-56db-4ea6-a25c-211120e54b30");
             context.Locations.AddOrUpdate(x => x.LocationId,
                 new Location()
                 {
@@ -238,7 +243,7 @@
                     FirePower = 22,
                     ShotLimit = 4,
                     Venom = 0,
-                    JawStrength = 5, 
+                    JawStrength = 5,
                     Stealth = 6
                 },
 
@@ -246,7 +251,7 @@
                 {
                     DragonId = 7,
                     OwnerId = newGuid,
-                    DragonClass  = ClassType.Sharp,
+                    DragonClass = ClassType.Sharp,
                     DragonType = "Stormcutter",
                     Color = "Woody-Brown",
                     LocationId = 5,
@@ -400,7 +405,7 @@
                     SizeLength = 9.1,
                     SizeHeight = 1.9,
                     Weight = 408.5,
-                    WingSpan= 14.63,
+                    WingSpan = 14.63,
                     Attack = 15,
                     Speed = 20,
                     Armor = 18,
@@ -416,10 +421,10 @@
                 {
                     DragonId = 14,
                     OwnerId = newGuid,
-                    DragonClass= ClassType.Stoker,
+                    DragonClass = ClassType.Stoker,
                     DragonType = "Terrible Terror",
                     Color = "Varies",
-                    LocationId  = 11,
+                    LocationId = 11,
                     FireType = "Propane Fire",
                     SizeLength = 1.81,
                     SizeHeight = 0.43,
@@ -452,7 +457,7 @@
                     Attack = 18,
                     Speed = 18,
                     Armor = 30,
-                    FirePower = 32, 
+                    FirePower = 32,
                     ShotLimit = 10,
                     Venom = 8,
                     JawStrength = 7,
@@ -462,7 +467,7 @@
                 },
                 new Dragon()
                 {
-                    DragonId= 16,
+                    DragonId = 16,
                     OwnerId = newGuid,
                     DragonClass = ClassType.Boulder,
                     DragonType = "Hotburple",
@@ -480,7 +485,7 @@
                     ShotLimit = 6,
                     Venom = 0,
                     JawStrength = 8,
-                    Stealth= 5,
+                    Stealth = 5,
                     Image = ReadFile("../../IndvImages/hotburple.jpeg")
                 },
                 new Dragon()
@@ -503,7 +508,7 @@
                     ShotLimit = 8,
                     Venom = 12,
                     JawStrength = 16,
-                    Stealth= 6,
+                    Stealth = 6,
                     Image = ReadFile("../../IndvImages/deathgripper.jpg")
                 },
                 new Dragon()
@@ -561,7 +566,7 @@
                     Gender = "Female",
                     HairColor = "Blonde",
                     Eyecolor = "Blue",
-                    HasDragon= true,
+                    HasDragon = true,
                     Image = ReadFile("../../IndvImages/HowTrainYourDragonAstrid.jpg")
 
                 },
@@ -625,7 +630,7 @@
                     Eyecolor = "Blue",
                     HasDragon = true,
                     Image = ReadFile("../../IndvImages/HowToTrainRuffnut.jpeg")
-                    
+
                 },
 
                 new Human()
@@ -901,7 +906,7 @@
                 },
                 new Partnership()
                 {
-                    PartnershipId= 8,
+                    PartnershipId = 8,
                     OwnerId = newGuid,
                     HumanId = 8,
                     DragonId = 7,
@@ -949,7 +954,7 @@
                 },
                 new Partnership()
                 {
-                    PartnershipId= 12,
+                    PartnershipId = 12,
                     OwnerId = newGuid,
                     HumanId = 17,
                     DragonId = 12,
@@ -993,6 +998,5 @@
 
             return data;
         }
-    }
-}
+    }}
 

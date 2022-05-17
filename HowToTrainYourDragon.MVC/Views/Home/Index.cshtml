@@ -4,29 +4,34 @@
 <body style="background-image: url('../../Images/BERK2.jpeg'); background-repeat: no-repeat; background-attachment:fixed; background-size: cover;">
     
 
-    <div class="jumbotron">
+    <div class="jumbotron" style="font-family: Papyrus, fantasy; border: solid; border-color: white; background-color: black; color: white;">
         <h1>How To Train Your Dragon</h1>
         <p class="lead">This is a How To Train Your Dragon Database where see all the characters, dragons, and locations from the franchise.</p>
         @Html.ActionLink("Learn More", "About")
     </div>
 
     <div class="row" style="color:white;">
-        <div class="col-md-4">
+        <div class="col-md-4" style="border: solid; border-color:white; background-color: deepskyblue; margin: 3em; font-family: Papyrus, fantasy;">
             <h2>Locations</h2>
             <p>
-               Dive into the Locations that make the franchise so beautiful to look at.
+                Dive into the Locations that make the franchise so beautiful to look at.
             </p>
-           @Html.ActionLink("See List of Locations", "Index", "Location", null, new {@class = "btn btn-primary btn-large"})
+            @Html.ActionLink("Locations", "Index", "Location", null, new { @class = "btn btn-primary btn-small" })
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="border: solid; border-color: white; background-color: crimson; margin: 3em; font-family: Papyrus, fantasy;">
             <h2>Characters</h2>
             <p>See the Human Charaacters that you fell in love with(or you learn to hate).</p>
-            @Html.ActionLink("See List of Chracters", "Index", "Human", null, new { @class = "btn btn-primary btn-large" })
+            @Html.ActionLink("Chracters", "Index", "Human", null, new { @class = "btn btn-primary btn-large" })
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="border: solid; border-color: white; background-color: darkcyan; margin: 3em; font-family: Papyrus, fantasy;">
             <h2>Dragons</h2>
-            <p>See The Dragons that made the franchise so iconic.</p>
-            @Html.ActionLink("See List of Dragons", "Index", "Dragon", null, new { @class = "btn btn-primary btn-large" })
+            <p>See The AWESOME Dragons that made the franchise so iconic.</p>
+            @Html.ActionLink("Dragons", "Index", "Dragon", null, new { @class = "btn btn-primary btn-large" })
+        </div>
+        <div class="col-md-4" style="border: solid; border-color: white; background-color: darksalmon; margin: 3em; font-family: Papyrus, fantasy;">
+            <h2>Partnerships</h2>
+            <p>See a List of Human Riders and Dragon Companion Duos.</p>
+            @Html.ActionLink("Partnerships", "Index", "Partnerships", null, new { @class = "btn btn-primary btn-large" })
         </div>
     </div>
 </body>

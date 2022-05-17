@@ -70,7 +70,7 @@ namespace HowToTrainYourDragon.Service
                 {
                     DragonId = d.DragonId,
                     DragonType = d.DragonType,
-                    Color = d.Color,
+                    DragonClass = d.DragonClass,
                 });
 
                 return query.ToArray();

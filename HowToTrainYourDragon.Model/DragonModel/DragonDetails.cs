@@ -31,7 +31,7 @@ namespace HowToTrainYourDragon.Model.DragonModel
         [Display(Name ="Height(in meters)")]
         public double SizeHeight { get; set; }
 
-        [Display(Name ="Weigth(in kiloggrams)")]
+        [Display(Name ="Weigth(in kilograms)")]
         public double Weight { get; set; }
         
         [Display(Name = "Wingspan(in meters)")]

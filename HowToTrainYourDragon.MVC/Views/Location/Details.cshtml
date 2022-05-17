@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Details";
 }
-<body style="background-image: url('../../Images/99322fb324515947b082d96ea2186559.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body style="background-image: url('../../Images/99322fb324515947b082d96ea2186559.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;font-family: Papyrus, fantasy; ">
 
     <h2 style="color:white;">Details</h2>
 
@@ -55,7 +55,7 @@
                 </tr>
             }
         </table>
-        <table class="Humantable"  style ="display: inline-block; float: right;">
+        <table class="Humantable" style="display: inline-block; float: right;">
             <tr>
 
                 <th>
@@ -80,8 +80,8 @@
 
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new {  id = Model.LocationId }, new { @style = "color: white;" }) |
-        @Html.ActionLink("Back to List", "Index", null, new {@style ="color: white;"})
+        @Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }, new { @style = "color: white;" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @style = "color: white;" })
     </p>
 
 </body>

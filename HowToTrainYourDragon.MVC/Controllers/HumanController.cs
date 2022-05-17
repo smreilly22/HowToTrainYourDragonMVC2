@@ -64,7 +64,6 @@ namespace HowToTrainYourDragon.MVC.Controllers
                 HumanId = detail.HumanId,
                 Name = detail.Name,
                 Occupation = detail.Occupation,
-                //PreviousLocationId = detail.PreviousLocationId,
                 CurrentLocationId = detail.CurrentLocationId,
                 DragonCompanionId = detail.DragonCompanionId,
                 IsEvil = detail.IsEvil,
