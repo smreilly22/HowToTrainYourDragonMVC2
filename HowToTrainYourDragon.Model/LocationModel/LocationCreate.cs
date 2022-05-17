@@ -12,7 +12,7 @@ namespace HowToTrainYourDragon.Model.LocationModel
 
         public string LocationName { get; set; }
 
-        public string Climate { get; set; }
+        public string AlternateName { get; set; }
 
 
     }

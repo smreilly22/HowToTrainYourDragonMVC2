@@ -68,7 +68,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
             {
                 LocationId = detail.LocationId,
                 LocationName = detail.LocationName,
-                Climate = detail.Climate
+                AlternateName = detail.AlternateName
 
             };
 

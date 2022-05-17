@@ -20,7 +20,7 @@ namespace HowToTrainYourDragon.Data
         public string LocationName { get; set; }
 
         [Required]
-        public string Climate { get; set; }
+        public string AlternateLocation { get; set; }
 
         
 

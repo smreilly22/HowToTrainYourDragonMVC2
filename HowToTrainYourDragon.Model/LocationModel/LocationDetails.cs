@@ -11,16 +11,20 @@ namespace HowToTrainYourDragon.Model.LocationModel
     public class LocationDetails
     {
         [Key]
+        [Display(Name = "Location Id")]
         public int LocationId
         {
             get; set;
         }
+
+        [Display(Name = "Location")]
         public string LocationName
         {
             get; set;
         }
 
-        public string Climate { get; set; }
+        [Display(Name = "Alternate Name")]
+        public string AlternateName { get; set; }
 
         public List<Dragon> Dragons { get; set; } = new List<Dragon>();
 

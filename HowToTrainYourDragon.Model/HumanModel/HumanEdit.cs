@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace HowToTrainYourDragon.Model.HumanModel
 
         public int CurrentLocationId { get; set; }
 
+        [DisplayFormat(NullDisplayText="", ApplyFormatInEditMode =true)]
         public int? DragonCompanionId { get; set; }
 
         public bool IsEvil { get; set; }

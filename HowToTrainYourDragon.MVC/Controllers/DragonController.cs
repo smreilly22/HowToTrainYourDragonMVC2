@@ -75,7 +75,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
             {
                 DragonId = detail.DragonId,
                 DragonType = detail.DragonType,
-                Description = detail.Description,
+                Color = detail.Color,
                 Image = detail.Image,
                
                 CurrentLocatonId = detail.CurrentLocationId

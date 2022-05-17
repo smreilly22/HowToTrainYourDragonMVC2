@@ -20,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsEvil)
+                @Html.DisplayNameFor(model => model.HasDragon)
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,16 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsEvil)
+                @Html.DisplayFor(model => item.HasDragon)
+                @if (item.HasDragon == true)
+                {
+                    @Html.Encode("Has Dragon")
+
+                }
+                @if (item.HasDragon == false)
+                {
+                    @Html.Encode("Does Not have Dragon")
+                }
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.HumanId }, new {@style="color:white"}) |

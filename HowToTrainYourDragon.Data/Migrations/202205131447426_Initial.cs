@@ -14,8 +14,23 @@
                         DragonId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
                         DragonType = c.String(nullable: false),
-                        Description = c.String(nullable: false),
+                        Color = c.String(nullable: false),
                         LocationId = c.Int(nullable: false),
+                        Image = c.Binary(),
+                        DragonClass = c.Int(nullable: false),
+                        SizeLength = c.Double(nullable: false),
+                        SizeHeight = c.Double(nullable: false),
+                        Weight = c.Double(nullable: false),
+                        WingSpan = c.Double(nullable: false),
+                        FireType = c.String(nullable: false),
+                        Attack = c.Int(nullable: false),
+                        Speed = c.Int(nullable: false),
+                        Armor = c.Int(nullable: false),
+                        FirePower = c.Int(nullable: false),
+                        ShotLimit = c.Int(nullable: false),
+                        Venom = c.Int(nullable: false),
+                        JawStrength = c.Int(nullable: false),
+                        Stealth = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.DragonId)
                 .ForeignKey("dbo.Location", t => t.LocationId, cascadeDelete: true)
@@ -28,7 +43,7 @@
                         LocationId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
                         LocationName = c.String(nullable: false),
-                        Climate = c.String(nullable: false),
+                        AlternateLocation = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.LocationId);
             
@@ -43,6 +58,11 @@
                         IsEvil = c.Boolean(nullable: false),
                         LocationId = c.Int(nullable: false),
                         DragonId = c.Int(),
+                        Image = c.Binary(),
+                        Gender = c.String(),
+                        HairColor = c.String(nullable: false),
+                        Eyecolor = c.String(nullable: false),
+                        HasDragon = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.HumanId)
                 .ForeignKey("dbo.Dragon", t => t.DragonId)

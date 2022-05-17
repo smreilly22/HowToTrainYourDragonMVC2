@@ -26,6 +26,9 @@
             <dd>
                 @Html.DisplayFor(model => model.Name)
             </dd>
+        </dl>
+        <dl class="dl-horizontal">
+
             <dt>
                 @Html.DisplayNameFor(model => model.Gender)
             </dt>
@@ -45,6 +48,9 @@
                 @Html.DisplayFor(model => model.EyeColor)
             </dd>
 
+        </dl>
+        <dl class="dl-horizontal">
+
             <dt>
                 @Html.DisplayNameFor(model => model.Occupation)
             </dt>
@@ -58,18 +64,18 @@
             <dd>
                 @Html.DisplayFor(model => model.CurrentLocation)
             </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.HasDragon)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.HasDragon)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Dragon.DragonType)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Dragon.DragonType)
-            </dd>
+            
+            
+            @if(Model.DragonCompanionId != null)
+             {
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DragonCompanion)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DragonCompanion)
+                </dd>
+             }
 
        
 
@@ -79,12 +85,22 @@
 
             <dd>
                 @Html.DisplayFor(model => model.IsEvil)
-            </dd>
+                @if(Model.IsEvil == true)
+                {
+                    @Html.Encode("Villian")
 
+                }
+                @if(Model.IsEvil == false)
+                {
+                    @Html.Encode("Hero ")
+
+                 }
+            </dd>
         </dl>
+
         <dl>
             <dt>
-                <img src="/Human/RetrieveImage/@Model.HumanId" alt="" height=200 width=300 style="margin-left: 400px; border-radius: 45%;" />
+                <img src="/Human/RetrieveImage/@Model.HumanId" alt="" height=200 width=300 style="margin-left: 400px; margin-top:-200px; border-radius: 45%;" />
             </dt>
         </dl>
     </div>

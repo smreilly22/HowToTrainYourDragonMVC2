@@ -25,7 +25,7 @@ namespace HowToTrainYourDragon.Service
             {
                 OwnerId = _userId,
                 LocationName = location.LocationName,
-                Climate = location.Climate
+                AlternateLocation = location.AlternateName
 
             };
 
@@ -66,7 +66,7 @@ namespace HowToTrainYourDragon.Service
                     {
                         LocationId = locationEntity.LocationId,
                         LocationName = locationEntity.LocationName,
-                        Climate = locationEntity.Climate,
+                        AlternateName = locationEntity.AlternateLocation,
                         Dragons = locationEntity.Dragons.ToList(),
                         Humans = locationEntity.Humans.ToList()
                     };
@@ -81,7 +81,7 @@ namespace HowToTrainYourDragon.Service
                 var entity = ctx.Locations.Single(l => l.LocationId == location.LocationId && l.OwnerId == _userId);
 
                 entity.LocationName = location.LocationName; 
-                entity.Climate = location.Climate;
+                entity.AlternateLocation = location.AlternateName;
                 return ctx.SaveChanges() == 1;
             }
 

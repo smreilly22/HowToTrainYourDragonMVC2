@@ -67,7 +67,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.HasDragon, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <div class="checkbox">
+                    <div>
                         @Html.EditorFor(model => model.HasDragon)
                         @Html.ValidationMessageFor(model => model.HasDragon, "", new { @class = "text-danger" })
                     </div>
@@ -85,7 +85,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsEvil, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <div class="checkbox">
+                    <div>
                         @Html.EditorFor(model => model.IsEvil)
                         @Html.ValidationMessageFor(model => model.IsEvil, "", new { @class = "text-danger" })
                     </div>
@@ -94,6 +94,7 @@
 
             <div>
                 <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+                <p></p>
             </div>
 
             <div class="form-group">

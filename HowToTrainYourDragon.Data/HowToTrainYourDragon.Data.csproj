@@ -61,21 +61,9 @@
     <Compile Include="Human.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Migrations\202205061324051_Initial.cs" />
-    <Compile Include="Migrations\202205061324051_Initial.designer.cs">
-      <DependentUpon>202205061324051_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205101606211_1.cs" />
-    <Compile Include="Migrations\202205101606211_1.designer.cs">
-      <DependentUpon>202205101606211_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205101932357_2.cs" />
-    <Compile Include="Migrations\202205101932357_2.designer.cs">
-      <DependentUpon>202205101932357_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205121324575_NewHumanProps.cs" />
-    <Compile Include="Migrations\202205121324575_NewHumanProps.designer.cs">
-      <DependentUpon>202205121324575_NewHumanProps.cs</DependentUpon>
+    <Compile Include="Migrations\202205131447426_Initial.cs" />
+    <Compile Include="Migrations\202205131447426_Initial.designer.cs">
+      <DependentUpon>202205131447426_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Partnership.cs" />
@@ -86,24 +74,52 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205061324051_Initial.resx">
-      <DependentUpon>202205061324051_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205101606211_1.resx">
-      <DependentUpon>202205101606211_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205101932357_2.resx">
-      <DependentUpon>202205101932357_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205121324575_NewHumanProps.resx">
-      <DependentUpon>202205121324575_NewHumanProps.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
+    <Content Include="IndvImages\alvin.jpeg" />
+    <Content Include="IndvImages\bewilderbeast.jpg" />
+    <Content Include="IndvImages\Bjarke.jpeg" />
+    <Content Include="IndvImages\Bludvist.jpg" />
+    <Content Include="IndvImages\dagur.jpeg" />
+    <Content Include="IndvImages\deadlynadder2.jpg" />
+    <Content Include="IndvImages\deathgripper.jpg" />
+    <Content Include="IndvImages\Fishlegs.jpg" />
+    <Content Include="IndvImages\gobber.jpg" />
+    <Content Include="IndvImages\grimmel.jpeg" />
+    <Content Include="IndvImages\griselda.jpg" />
+    <Content Include="IndvImages\gronckle.jpg" />
+    <Content Include="IndvImages\Heather.jpeg" />
     <Content Include="IndvImages\Hiccup.jpeg" />
     <Content Include="IndvImages\Hiccup2.jpg" />
+    <Content Include="IndvImages\hotburple.jpeg" />
+    <Content Include="IndvImages\HowToTrainRuffnut.jpeg" />
+    <Content Include="IndvImages\HowToTrainYourDragonHiccup.jpeg" />
+    <Content Include="IndvImages\HowToTrainYourDragonSnotlout.jpg" />
+    <Content Include="IndvImages\HowTrainYourDragonAstrid.jpg" />
+    <Content Include="IndvImages\Johann.jpeg" />
+    <Content Include="IndvImages\Krogan.jpeg" />
+    <Content Include="IndvImages\lightfury.jpg" />
+    <Content Include="IndvImages\monsterousnightmare2.jpg" />
+    <Content Include="IndvImages\NightFury.jpg" />
+    <Content Include="IndvImages\razorwhip.jpg" />
+    <Content Include="IndvImages\reddeath.jpg" />
+    <Content Include="IndvImages\rumblehorn.jpeg" />
+    <Content Include="IndvImages\Ryker.jpeg" />
+    <Content Include="IndvImages\singetail.jpg" />
+    <Content Include="IndvImages\skrill.jpg" />
+    <Content Include="IndvImages\Stoick2.jpeg" />
+    <Content Include="IndvImages\stormcutter.jpg" />
+    <Content Include="IndvImages\terribleterror.jpg" />
     <Content Include="IndvImages\Toothless.jpg" />
+    <Content Include="IndvImages\TripleStryke2.jpeg" />
+    <Content Include="IndvImages\tuffnut.jpg" />
+    <Content Include="IndvImages\Valka.jpeg" />
+    <Content Include="IndvImages\viggo.jpeg" />
+    <Content Include="IndvImages\whisperingdeath2.jpeg" />
+    <Content Include="IndvImages\zippleback2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202205131447426_Initial.resx">
+      <DependentUpon>202205131447426_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

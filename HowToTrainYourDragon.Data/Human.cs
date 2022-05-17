@@ -21,6 +21,8 @@ namespace HowToTrainYourDragon.Data
 
         [Required]
         public string Occupation { get; set; }
+
+        [Required]
         public bool IsEvil { get; set; }
         
         [Required]

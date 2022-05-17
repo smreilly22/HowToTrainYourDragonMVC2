@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace HowToTrainYourDragon.Data
 {
+    public enum ClassType { Strike = 1, Tracker, Sharp, Boulder, Tidal, Mystery, Stoker  }
     public class Dragon
     {
         [Key]
@@ -20,14 +21,8 @@ namespace HowToTrainYourDragon.Data
         public string DragonType { get; set; }
 
         [Required]
-        public string Description { get; set; }
+        public string Color { get; set; }
 
-
-       //[Required]
-       //[ForeignKey(nameof(PreviousLocation))]
-        //public int PreviousLocationId { get; set; }
-
-        //public virtual Location PreviousLocation { get; set; }
 
         [Required]
         [ForeignKey(nameof(Location))]
@@ -35,8 +30,42 @@ namespace HowToTrainYourDragon.Data
 
          public virtual Location Location { get; set; }
 
-        //public virtual Human HumanRiders { get; set; }
-
         public byte[] Image { get; set; }
+
+        public ClassType DragonClass { get; set; }
+
+        [Required]
+        public double SizeLength { get; set; }
+
+        [Required]
+        public double SizeHeight { get; set; }
+
+        [Required]
+        public double Weight { get; set; }
+
+        [Required]
+        public double WingSpan { get; set; }
+
+        [Required]
+        public string FireType { get; set; }
+
+        //Stats
+        public int Attack { get; set; }
+
+        public int Speed { get; set; }
+
+        public int Armor { get; set; }
+
+        public int FirePower { get; set; }
+
+        public int ShotLimit { get; set; }
+
+        public int Venom { get; set; }
+
+        public int JawStrength { get; set; }
+
+        public int Stealth { get; set; }
+
+        
     }
 }

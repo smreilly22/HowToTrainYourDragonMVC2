@@ -63,7 +63,7 @@ namespace HowToTrainYourDragon.Service
                 {
                     HumanId = x.HumanId,
                     Name = x.Name,
-                    IsEvil = x.IsEvil
+                    HasDragon = x.HasDragon
                 });
 
                 return query.ToArray();
@@ -75,23 +75,57 @@ namespace HowToTrainYourDragon.Service
             using(var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Humans.Single(h => h.HumanId == id && h.OwnerId == _userId);
-                return
+                if (entity.DragonCompanion == null)
+                {
+
+                    return
                     new HumanDetails
                     {
                         HumanId = entity.HumanId,
                         Name = entity.Name,
                         Occupation = entity.Occupation,
-                       // CurrentLocationId = entity.LocationId,
+                        // CurrentLocationId = entity.LocationId,
                         CurrentLocation = entity.Location.LocationName,
-                       DragonCompanionId = entity.DragonId.GetValueOrDefault(),
-                      // DragonCompanion = entity.DragonCompanion.DragonType,
+
                         IsEvil = entity.IsEvil,
                         Image = entity.Image,
                         HairColor = entity.HairColor,
                         EyeColor = entity.Eyecolor,
                         HasDragon = entity.HasDragon,
-                        Gender = entity.Gender
+                        Gender = entity.Gender,
+                        DragonCompanionId = 0,
+                        DragonCompanion = "Does not have a companion",
+
+
+
                     };
+                }
+
+                else
+                {
+                    return new HumanDetails
+                    {
+
+                        HumanId = entity.HumanId,
+                        Name = entity.Name,
+                        Occupation = entity.Occupation,
+                        // CurrentLocationId = entity.LocationId,
+                        CurrentLocation = entity.Location.LocationName,
+
+                        IsEvil = entity.IsEvil,
+                        Image = entity.Image,
+                        HairColor = entity.HairColor,
+                        EyeColor = entity.Eyecolor,
+                        HasDragon = entity.HasDragon,
+                        Gender = entity.Gender,
+                        DragonCompanionId = entity.DragonCompanion.DragonId,
+                        DragonCompanion = entity.DragonCompanion.DragonType
+
+                    };
+                }
+
+              
+                
             }
         }
          
@@ -126,6 +160,7 @@ namespace HowToTrainYourDragon.Service
             using(var ctx = new ApplicationDbContext())
             {
                 var partnershipEntity = ctx.Partnerships.Where(h => h.HumanId == humanId).ToArray();
+                
                 foreach (Partnership partnership in partnershipEntity)
                 {
                     ctx.Partnerships.Remove(partnership);

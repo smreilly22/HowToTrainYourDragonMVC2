@@ -16,7 +16,7 @@ namespace HowToTrainYourDragon.Model.LocationModel
         {
             get; set;
         }
-        public string Climate
+        public string AlternateName
         {
             get; set;
         }

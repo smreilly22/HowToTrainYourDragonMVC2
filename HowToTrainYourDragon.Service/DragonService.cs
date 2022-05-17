@@ -26,10 +26,23 @@ namespace HowToTrainYourDragon.Service
             {
                 OwnerId = _userId,
                 DragonType = dragon.DragonType,
-                Description = dragon.Description,
-                //PreviousLocationId = dragon.PreviousLocationId,
+                Color = dragon.Color,
                 LocationId = dragon.LocationId,
-                Image = dragon.Image
+                Image = dragon.Image,
+                SizeHeight = dragon.SizeHeight,
+                SizeLength = dragon.SizeLength,
+                WingSpan = dragon.WingSpan,
+                DragonClass = dragon.DragonClass,
+                FireType = dragon.FireType,
+                Attack = dragon.Attack,
+                Armor = dragon.Armor,
+                Speed = dragon.Speed,
+                ShotLimit = dragon.ShotLimit,
+                Venom = dragon.Venom,
+                FirePower = dragon.FirePower,
+                JawStrength = dragon.JawStrength,
+                Stealth = dragon.Stealth,
+                Weight = dragon.Weight
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -57,7 +70,7 @@ namespace HowToTrainYourDragon.Service
                 {
                     DragonId = d.DragonId,
                     DragonType = d.DragonType,
-                    Description = d.Description,
+                    Color = d.Color,
                 });
 
                 return query.ToArray();
@@ -74,11 +87,24 @@ namespace HowToTrainYourDragon.Service
                     {
                         DragonId = entity.DragonId,
                         DragonType = entity.DragonType,
-                        Description = entity.Description,
-                       // PreviousLocationId = entity.PreviousLocationId,
+                        Color = entity.Color,
                         CurrentLocationId = entity.LocationId,
                         LocationName = entity.Location.LocationName,
-                        Image = entity.Image
+                        Image = entity.Image,
+                        SizeHeight = entity.SizeHeight,
+                        SizeLength = entity.SizeLength,
+                        WingSpan = entity.WingSpan,
+                        FireType = entity.FireType,
+                        DragonClass = entity.DragonClass,
+                        Attack = entity.Attack,
+                        Armor = entity.Armor,
+                        FirePower = entity.FirePower,
+                        Speed = entity.Speed,
+                        ShotLimit = entity.ShotLimit,
+                        Venom = entity.Venom,
+                        JawStrength = entity.JawStrength,
+                        Stealth = entity.Stealth,
+                        Weight = entity.Weight
                     };
             }
         }
@@ -90,10 +116,23 @@ namespace HowToTrainYourDragon.Service
             {
                 var entity = ctx.Dragons.Single(d => d.DragonId == dragon.DragonId && d.OwnerId == _userId);
                 entity.DragonType = dragon.DragonType;
-                entity.Description = dragon.Description;
-               // entity.PreviousLocationId = dragon.PreviousLocationId;
+                entity.Color = dragon.Color;
                 entity.LocationId = dragon.CurrentLocatonId;
                 entity.Image = dragon.Image;
+                entity.SizeHeight = dragon.SizeHeight;
+                entity.SizeLength = dragon.SizeLength;
+                entity.WingSpan = dragon.WingSpan;
+                entity.FirePower = dragon.FirePower;
+                entity.DragonClass = dragon.DragonClass;
+                entity.Speed = dragon.Speed;
+                entity.Armor = dragon.Armor;
+                entity.Attack = dragon.Attack;
+                entity.FirePower = dragon.FirePower;
+                entity.ShotLimit = dragon.ShotLimit;
+                entity.Venom = dragon.Venom;
+                entity.JawStrength = dragon.JawStrength;
+                entity.Stealth = dragon.Stealth;
+                entity.Weight = dragon.Weight;
 
                 return ctx.SaveChanges() == 1;
             }
