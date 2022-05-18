@@ -69,6 +69,7 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
+                <p>Deleting this Human Character will delete the Partnership its associated with(it there is one). Press Delete to delete this character.</p>
                 <input type="submit" value="Delete" class="btn btn-default" /> |
                 @Html.ActionLink("Back to List", "Index", null, new { @style = "color:white" })
             </div>

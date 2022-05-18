@@ -52,6 +52,7 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
+                <p>Deleting this dragon will delete the Humans and Partnership that link with it via Foreign Key(if there are any). Press Delete if this is what you want.</p>
                 <input type="submit" value="Delete" class="btn btn-default" /> |
                 @Html.ActionLink("Back to List", "Index", null, new {@style= "color:white"})
             </div>
