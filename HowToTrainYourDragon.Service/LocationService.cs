@@ -91,6 +91,7 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
+               
                 var humanEntity = ctx.Humans.Where(h => h.LocationId == locationId).ToArray();
                 foreach (Human human in humanEntity)
                 {
