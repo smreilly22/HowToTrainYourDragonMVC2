@@ -18,6 +18,7 @@ namespace HowToTrainYourDragon.Service
         {
             _userId = userId;
         }
+        public HumanService() { }
 
         public bool CreateHuman(HttpPostedFileBase file, HumanCreate model)
         {
@@ -59,7 +60,7 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Humans.Where(h => h.OwnerId == _userId).Select(x => new HumanListAll
+                var query = ctx.Humans.Select(x => new HumanListAll
                 {
                     HumanId = x.HumanId,
                     Name = x.Name,
@@ -74,7 +75,7 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Humans.Single(h => h.HumanId == id && h.OwnerId == _userId);
+                var entity = ctx.Humans.Single(h => h.HumanId == id);
                 if (entity.DragonCompanion == null)
                 {
 

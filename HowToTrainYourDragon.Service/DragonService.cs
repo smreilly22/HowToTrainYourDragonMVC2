@@ -19,6 +19,8 @@ namespace HowToTrainYourDragon.Service
             _userId = userId;
         }
 
+        public DragonService() { }
+
         public bool CreateDragon(HttpPostedFileBase file, DragonCreate dragon)
         {
             dragon.Image = ConvertToBytes(file);
@@ -66,7 +68,7 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Dragons.Where(d => d.OwnerId == _userId).Select(d => new DragonListAll
+                var query = ctx.Dragons.Select(d => new DragonListAll
                 {
                     DragonId = d.DragonId,
                     DragonType = d.DragonType,
@@ -81,7 +83,7 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Dragons.Single(d => d.DragonId == id && d.OwnerId == _userId);
+                var entity = ctx.Dragons.Single(d => d.DragonId == id);
                 return
                     new DragonDetails
                     {

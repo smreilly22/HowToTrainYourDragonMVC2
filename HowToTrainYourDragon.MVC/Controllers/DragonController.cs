@@ -16,8 +16,11 @@ namespace HowToTrainYourDragon.MVC.Controllers
         // GET: Dragon
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new DragonService(userId);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            //var service = new DragonService(userId);
+            //var model = service.GetDragons();
+
+            var service = new DragonService();
             var model = service.GetDragons();
             return View(model);
         }
@@ -56,7 +59,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var service = CreateDragonService();
+            var service = new DragonService();
             var model = service.GetDragonById(id);
 
             return View(model);

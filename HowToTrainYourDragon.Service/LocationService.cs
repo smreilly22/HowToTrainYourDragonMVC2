@@ -19,6 +19,8 @@ namespace HowToTrainYourDragon.Service
             _userId = userId;
         }
 
+        public LocationService() { }
+
         public bool CreateLocation(LocationCreate location)
         {
             var locationEntity = new Location()
@@ -40,7 +42,7 @@ namespace HowToTrainYourDragon.Service
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Locations.Where(l => l.OwnerId == _userId).Select(l => new LocationListAll
+                var query = ctx.Locations.Select(l => new LocationListAll
                 {
                     LocationId = l.LocationId,
                     LocationName = l.LocationName,

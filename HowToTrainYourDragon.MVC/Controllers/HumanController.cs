@@ -14,8 +14,8 @@ namespace HowToTrainYourDragon.MVC.Controllers
         // GET: Human
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new HumanService(userId);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new HumanService();
             var model = service.GetHumans();
             return View(model);
         }
@@ -49,7 +49,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var service = CreateHumanService();
+            var service = new HumanService();
             var model = service.GetHumanById(id);
 
             return View(model);

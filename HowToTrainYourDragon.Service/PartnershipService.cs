@@ -18,11 +18,13 @@ namespace HowToTrainYourDragon.Service
             _userid = userId;
         }
 
+        public PartnershipService() { }
+
         public IEnumerable<PartnershipListAll> GetPartnerships()
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Partnerships.Where(p => p.OwnerId == _userid).Select(p => new PartnershipListAll
+                var entity = ctx.Partnerships.Select(p => new PartnershipListAll
                 {
                     PartnershipId = p.PartnershipId,
                     Human = p.Human,

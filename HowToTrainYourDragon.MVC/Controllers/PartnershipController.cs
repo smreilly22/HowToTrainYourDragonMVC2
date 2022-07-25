@@ -17,8 +17,8 @@ namespace HowToTrainYourDragon.MVC.Controllers
         // GET: Partnership
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new PartnershipService(userId);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PartnershipService();
             var model = service.GetPartnerships();
             return View(model);
         }

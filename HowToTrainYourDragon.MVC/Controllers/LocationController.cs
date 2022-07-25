@@ -16,8 +16,10 @@ namespace HowToTrainYourDragon.MVC.Controllers
         // GET: Location
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new LocationService(userId);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            //var service = new LocationService(userId);
+            // var model = service.GetLocations();
+            var service = new LocationService();
             var model = service.GetLocations();
             return View(model);
         }
@@ -52,7 +54,7 @@ namespace HowToTrainYourDragon.MVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var service = CreateLocationService();
+            var service = new LocationService();
             var model = service.GetLocationById(id);
 
             
